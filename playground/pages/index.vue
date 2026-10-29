@@ -14,6 +14,54 @@ watchEffect(() => {
   if (import.meta.client) document.documentElement.dataset.theme = theme.value
 })
 useHead({ htmlAttrs: { 'data-theme': 'dark' } })
+
+// ─── SEO ──────────────────────────────────────────────────────────────────────
+
+const siteUrl = useRuntimeConfig().public.siteUrl as string
+const seoTitle = 'notch-toast-vue — Notch-style toast notifications for Vue 3 and Nuxt'
+const seoDescription =
+  'Notch-style toast notifications for Vue 3 and Nuxt with smooth spring morphing, promise states, and edge-attached or floating placement. A Vue port of notch-toast.'
+const ogImage = siteUrl ? `${siteUrl}/og-image.png` : undefined
+
+useSeoMeta({
+  title: seoTitle,
+  description: seoDescription,
+  keywords: 'vue toast, nuxt toast, notch toast, notification, vue notifications, nuxt module, motion-v, promise toast',
+  robots: 'index, follow',
+  ogType: 'website',
+  ogSiteName: 'notch-toast-vue',
+  ogTitle: seoTitle,
+  ogDescription: seoDescription,
+  ogUrl: siteUrl || undefined,
+  ogImage,
+  ogImageWidth: ogImage ? 1200 : undefined,
+  ogImageHeight: ogImage ? 630 : undefined,
+  ogImageAlt: 'notch-toast-vue — notifications that morph beautifully',
+  twitterCard: 'summary_large_image',
+  twitterTitle: seoTitle,
+  twitterDescription: seoDescription,
+  twitterImage: ogImage,
+})
+
+useHead({
+  link: siteUrl ? [{ rel: 'canonical', href: siteUrl }] : [],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareSourceCode',
+        name: 'notch-toast-vue',
+        description: seoDescription,
+        programmingLanguage: 'TypeScript',
+        runtimePlatform: 'Vue 3, Nuxt 3/4',
+        codeRepository: 'https://github.com/Kelvinblaze/notch-toast-vue',
+        license: 'https://opensource.org/licenses/MIT',
+        author: { '@type': 'Person', name: 'Kelvin Ossai' },
+      }),
+    },
+  ],
+})
 function toggleTheme() {
   theme.value = theme.value === 'dark' ? 'light' : 'dark'
   try { localStorage.setItem('nt-theme', theme.value) } catch {}
