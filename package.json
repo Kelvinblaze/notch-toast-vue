@@ -1,6 +1,6 @@
 {
   "name": "notch-toast-vue",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A polished notch/floating toast notification library for Vue 3 and Nuxt 3",
   "type": "module",
   "exports": {
