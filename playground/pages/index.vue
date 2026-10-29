@@ -275,7 +275,7 @@ toast.update(id, { title: 'Identity verified', type: 'success', duration: 3600 }
         </button>
         <a class="btn btn-ghost hide-sm" href="#docs">Documentation</a>
         <a
-          class="btn btn-light"
+          class="btn btn-light hide-xs"
           href="https://github.com/Kelvinblaze/notch-toast-vue"
           target="_blank"
           rel="noopener"
