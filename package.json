@@ -1,0 +1,66 @@
+{
+  "name": "notch-toast-vue",
+  "version": "0.1.0",
+  "description": "A polished notch/floating toast notification library for Vue 3 and Nuxt 3",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./nuxt": {
+      "types": "./dist/module.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "dev": "nuxt dev playground",
+    "lint": "eslint src",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vue",
+    "nuxt",
+    "toast",
+    "notification",
+    "notch"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.4.0",
+    "motion-v": "^2.0.0",
+    "@vueuse/core": ">=10.0.0"
+  },
+  "peerDependenciesMeta": {
+    "nuxt": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@nuxt/kit": "^3.14.0",
+    "@nuxt/schema": "^3.14.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vueuse/core": "^15.0.0",
+    "motion-v": "^2.9.0",
+    "nuxt": "^4.6.3",
+    "typescript": "^5.5.0",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "^4.0.0",
+    "vue": "^3.5.0",
+    "vue-tsc": "^2.0.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.25.12": true,
+    "fsevents@2.3.3": true
+  }
+}
