@@ -1,6 +1,6 @@
 # notch-toast-vue
 
-A polished notch/floating toast notification library for Vue 3 and Nuxt 3. A Vue/Nuxt port of [notch-toast](https://github.com/Devsethi3/notch-toast) by [Devsethi3](https://github.com/Devsethi3); the design, styling and motion come from that project.
+A polished notch/floating toast notification library for Vue 3 and Nuxt. A Vue/Nuxt port of [notch-toast](https://github.com/Devsethi3/notch-toast) by [Devsethi3](https://github.com/Devsethi3); the design, styling and motion come from that project.
 
 ## Features
 
@@ -14,20 +14,29 @@ A polished notch/floating toast notification library for Vue 3 and Nuxt 3. A Vue
 - Accessible live-region announcements + Escape-key dismissal
 - Reduced-motion support
 - TypeScript-first
-- Works as a Vue 3 plugin or Nuxt 3 module
+- Works as a Vue 3 plugin or a Nuxt 3/4 module
+
+## Requirements
+
+- Vue `^3.4` (Vue 3.4 or newer)
+- Nuxt 3 or Nuxt 4 (optional)
+- Peer dependencies: [`motion-v`](https://motion.dev/docs/vue) (spring animations) and [`@vueuse/core`](https://vueuse.org)
 
 ## Install
 
 ```bash
-npm install notch-toast-vue
+npm install notch-toast-vue motion-v @vueuse/core
 ```
 
 ## Vue 3 usage
+
+Import the stylesheet once, and register the plugin (or import the component where you use it):
 
 ```ts
 // main.ts
 import { createApp } from 'vue'
 import NotchToastPlugin from 'notch-toast-vue'
+import 'notch-toast-vue/style.css'
 import App from './App.vue'
 
 createApp(App).use(NotchToastPlugin).mount('#app')
@@ -42,16 +51,26 @@ Mount the toaster once in your root component:
 </template>
 ```
 
-## Nuxt 3 usage
+Then call `toast` from anywhere on the client:
+
+```ts
+import { toast } from 'notch-toast-vue'
+
+toast.success('Payment sent')
+```
+
+Without the plugin, import the component directly: `import { NotchToaster } from 'notch-toast-vue'`.
+
+## Nuxt usage (Nuxt 3 and 4)
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: ['notch-toast-vue/nuxt'],
+  modules: ['motion-v/nuxt', 'notch-toast-vue/nuxt'],
 })
 ```
 
-Mount the toaster in your default layout:
+Mount the toaster in your default layout (or `app.vue`). Toasts are client-side only, so wrap it in `ClientOnly`:
 
 ```vue
 <!-- layouts/default.vue -->
@@ -65,7 +84,9 @@ Mount the toaster in your default layout:
 </template>
 ```
 
-`NotchToaster`, `useNotchToast`, and `toast` are auto-imported — no manual imports needed.
+`NotchToaster`, `useNotchToast`, and `toast` are auto-imported — no manual imports or stylesheet import needed.
+
+> Toasts only work in the browser. Call `toast` from event handlers, `onMounted`, or client-only code, not during server rendering.
 
 ## API
 
