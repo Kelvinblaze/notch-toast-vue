@@ -26,7 +26,7 @@ export default defineConfig({
         format === 'es' ? `${entry}.mjs` : `${entry}.cjs`,
     },
     rollupOptions: {
-      external: ['vue', 'motion-v', '@vueuse/core', 'nuxt', '@nuxt/kit', '@nuxt/schema'],
+      external: ['vue', 'motion-v', '@vueuse/core', 'node:fs', 'nuxt', '@nuxt/kit', '@nuxt/schema'],
       output: {
         globals: { vue: 'Vue' },
         exports: 'named',

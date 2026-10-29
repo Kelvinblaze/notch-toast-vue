@@ -1,6 +1,6 @@
 # notch-toast-vue
 
-A polished notch/floating toast notification library for Vue 3 and Nuxt 3. Inspired by [notch-toast](https://github.com/Devsethi3/notch-toast).
+A polished notch/floating toast notification library for Vue 3 and Nuxt 3. A Vue/Nuxt port of [notch-toast](https://github.com/Devsethi3/notch-toast) by [Devsethi3](https://github.com/Devsethi3); the design, styling and motion come from that project.
 
 ## Features
 
@@ -165,6 +165,14 @@ import { useNotchToast } from 'notch-toast-vue'
 const { activeToast, toast } = useNotchToast()
 // activeToast is a readonly Ref<ToastState | null>
 ```
+
+## License
+
+MIT
+
+## Credits
+
+Based on [notch-toast](https://github.com/Devsethi3/notch-toast) by Devsethi3 (MIT). Ported to Vue and Nuxt by Kelvin Ossai.
 
 ## License
 

@@ -20,7 +20,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
@@ -37,9 +38,9 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "vue": "^3.4.0",
+    "@vueuse/core": ">=10.0.0",
     "motion-v": "^2.0.0",
-    "@vueuse/core": ">=10.0.0"
+    "vue": "^3.4.0"
   },
   "peerDependenciesMeta": {
     "nuxt": {
@@ -49,6 +50,7 @@
   "devDependencies": {
     "@nuxt/kit": "^3.14.0",
     "@nuxt/schema": "^3.14.0",
+    "@types/node": "^26.6.6",
     "@vitejs/plugin-vue": "^5.0.0",
     "@vueuse/core": "^15.0.0",
     "motion-v": "^2.9.0",
@@ -63,5 +65,20 @@
     "esbuild@0.28.2": true,
     "esbuild@0.25.12": true,
     "fsevents@2.3.3": true
+  },
+  "author": "Kelvin Ossai <https://github.com/Kelvinblaze>",
+  "contributors": [
+    {
+      "name": "Devsethi3",
+      "url": "https://github.com/Devsethi3"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kelvinblaze/notch-toast-vue.git"
+  },
+  "homepage": "https://github.com/Kelvinblaze/notch-toast-vue#readme",
+  "bugs": {
+    "url": "https://github.com/Kelvinblaze/notch-toast-vue/issues"
   }
 }
