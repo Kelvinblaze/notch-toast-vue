@@ -174,6 +174,3 @@ MIT
 
 Based on [notch-toast](https://github.com/Devsethi3/notch-toast) by Devsethi3 (MIT). Ported to Vue and Nuxt by Kelvin Ossai.
 
-## License
-
-MIT
