@@ -13,7 +13,8 @@
       "types": "./dist/module.d.ts",
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
-    }
+    },
+    "./style.css": "./dist/notch-toast-vue.css"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
