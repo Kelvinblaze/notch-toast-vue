@@ -1,0 +1,6 @@
+[build]
+  command = "npm install && npx nuxt generate playground"
+  publish = "playground/.output/public"
+
+[build.environment]
+  NODE_VERSION = "22"
